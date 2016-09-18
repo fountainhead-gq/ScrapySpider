@@ -21,7 +21,7 @@ NEWSPIDER_MODULE = 'Lagou.spiders'
 #USER_AGENT = 'Lagou (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -33,14 +33,9 @@ ROBOTSTXT_OBEY = True
 
 strtime = time.strftime('%Y%m%d')
 
-
-FILES_STORE = os.getcwd()
-FILES_STORE= os.path.join(FILES_STORE, r'/LagouInfo_{}.csv'.format(strtime))
-
-
 # feed exports
 FEED_FORMAT = 'csv'
-FEED_URI = FILES_STORE    # 以时间为准创建csv
+FEED_URI = './LagouInfo_{}.csv'.format(strtime)    # 以时间为准创建csv
 
 
 

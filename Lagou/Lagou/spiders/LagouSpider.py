@@ -4,7 +4,6 @@ import json
 import logging
 from Lagou.items import LagouItem
 
-
 logger = logging.getLogger()
 
 
@@ -84,7 +83,7 @@ class LagouspiderSpider(scrapy.Spider):
                 if self.curpage <= totalPageCount:
                     self.curpage += 1  # 继续爬下一页
                     print(u"当前页{}".format(self.curpage))
-                    yield scrapy.http.FormRequest(self.url, formdata={'pn': str(self.curpage)},headers=self.headers, callback=self.parse)
+                    yield scrapy.http.FormRequest(self.url, formdata={'pn': str(self.curpage)}, headers=self.headers, callback=self.parse)
         except:
             logger.error(response.body)
             logger.error(response.status)

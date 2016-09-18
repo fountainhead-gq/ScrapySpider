@@ -130,11 +130,3 @@ if __name__ == '__main__':
     a = Proxies(10)  # 设置爬去代理的页数
     a.verify_proxies()
     proxies = a.proxies
-'''
-    proxy_dir = os.getcwd()
-    proxy_dir = os.path.join(proxy_dir, 'proxy.txt')
-    with open(proxy_dir, 'a') as f:
-        for proxy in proxies:
-            if proxy !=0:
-                f.write(proxy + '\n')
-'''
