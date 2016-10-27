@@ -6,7 +6,9 @@
 
 - [scrapy爬取拉钩的招聘信息存储到MongoDB](https://github.com/fountainhead-gq/ScrapySpider/tree/master/Lagou)
 
-- [爬取微博信息存储到PostgreSql](https://github.com/fountainhead-gq/ScrapySpider/blob/master/SinaWeiboSpider/WeiboSpider/README.md)
+- [scrapy爬取微博信息存储到PostgreSql](https://github.com/fountainhead-gq/ScrapySpider/blob/master/SinaWeiboSpider/WeiboSpider/README.md)
+
+- [scrapy爬去微博数据存储到MongoDB](https://github.com/fountainhead-gq/ScrapySpider/tree/master/SinaSpider)
 
 
 
