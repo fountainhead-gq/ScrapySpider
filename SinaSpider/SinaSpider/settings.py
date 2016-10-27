@@ -1,4 +1,5 @@
 # encoding=utf-8
+
 BOT_NAME = 'SinaSpider'
 
 SPIDER_MODULES = ['SinaSpider.spiders']
