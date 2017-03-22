@@ -6,17 +6,20 @@ import requests
 import os
 from bs4 import BeautifulSoup
 
+header = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+}
 
 def crawl_url_name(_id):
-    uri = "http://www.ximalaya.com/tracks/{0}.json".format(_id)
-    body = requests.get(uri).json()
+    url = "http://www.ximalaya.com/tracks/{0}.json".format(_id)
+    body = requests.get(url, headers=header).json()
     name = body['title'] + ".mp3"
     url = body['play_path_64']
 
     return url, name
 
 def download_file(url, name):
-    r = requests.get(url, stream=True)
+    r = requests.get(url, stream=True, headers=header)
     if name not in '122. How much do parents matter?.mp3':
         with open(name, 'wb') as f:
             for chunk in r.iter_content(chunk_size=1024):
@@ -30,7 +33,7 @@ def download(_id):
     return download_file(url, name)
 
 def get_ids(web_url):
-    r = requests.get(web_url)
+    r = requests.get(web_url, headers=header)
     soup = BeautifulSoup(r.text, "html.parser")
     newlist = soup.find("div", { "class" : "personal_body" })
     allids = newlist.get("sound_ids")
